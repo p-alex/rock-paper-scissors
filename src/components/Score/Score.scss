@@ -1,0 +1,19 @@
+.score {
+  display: flex;
+  flex-direction: column;
+  padding: 10px 50px;
+  background: white;
+  align-items: center;
+  justify-content: center;
+  border-radius: 10px;
+  p {
+    color: var(--ScoreText);
+  }
+  h1 {
+    color: var(--DarkText);
+    font-size: 3.5rem;
+  }
+  @media (max-width: 967px) {
+    padding: 10px 30px;
+  }
+}

@@ -1,0 +1,18 @@
+.App {
+  position: relative;
+  -webkit-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 967px;
+
+  margin-left: auto;
+  margin-right: auto;
+  @media (max-width: 967px) {
+    & {
+      width: 90%;
+      height: 90%;
+    }
+  }
+}
