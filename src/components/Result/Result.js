@@ -9,7 +9,7 @@ export default function Result() {
   const dispatch = useDispatch();
 
   const [houseResult, setHouseResult] = useState("");
-  const [hasWon, setHasWon] = useState("");
+  const [gameResult, setGameResult] = useState("");
 
   const getRandomInt = (min, max) => {
     min = Math.ceil(min);
@@ -33,7 +33,7 @@ export default function Result() {
   useEffect(() => {
     if (option && houseResult) {
       if (option === houseResult) {
-        setHasWon("Tie!");
+        setGameResult("Tie!");
         return;
       }
       if (
@@ -41,11 +41,11 @@ export default function Result() {
         (option === "paper" && houseResult === "rock") ||
         (option === "rock" && houseResult === "scissors")
       ) {
-        setHasWon("You Won!");
+        setGameResult("You Won!");
         dispatch(incrementScore());
         return;
       } else {
-        setHasWon("You Lost!");
+        setGameResult("You Lost!");
         dispatch(decrementScore());
         return;
       }
@@ -63,8 +63,8 @@ export default function Result() {
         <div className="result_displayResultContainer">
           {option && houseResult ? (
             <>
-              <h1>{hasWon}</h1>
-              {hasWon ? (
+              <h1>{gameResult}</h1>
+              {gameResult ? (
                 <button onClick={() => dispatch(resetOption())}>
                   Play Again!
                 </button>
